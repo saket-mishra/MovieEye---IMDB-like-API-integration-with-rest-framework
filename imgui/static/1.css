@@ -592,7 +592,7 @@ animation-name: fadeOutLeft;
 .cover{height: 80px !important;width: 300px !important;line-height:80px;}
 @media screen and (min-width:640px){.cover{display: inline-block;}}
 @media screen and (max-width:639px){.cover{display: table;margin:0 auto;}}
-.sprite-cover{width:99%;background-color: #fff;margin-top:20px;}
+.sprite-cover{width:99%;background-color: #fff;margin-top:50px;}
 #mid{vertical-align: top;
     font-size: 28px;
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
@@ -789,7 +789,7 @@ input:-moz-placeholder {
 .release-cover{vertical-align: top;
     font-size: 28px;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
-    font-weight: bolder;color:#000;}
+    font-weight: bolder;color:#000;margin-top:40px;}
 .upcoming{vertical-align: top;
     font-size: 34px;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
