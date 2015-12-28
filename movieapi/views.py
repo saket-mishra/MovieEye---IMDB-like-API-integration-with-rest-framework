@@ -13,7 +13,7 @@ def api_root(request, format=None):
         'genres': reverse('genre-list', request=request, format=format)
     })
 
-class GenreDetail(generics.RetrieveUpdateDestroyAPIView):
+class GenreDetail(generics.ListCreateAPIView):
     serializer_class = MovieSerializer
     permission_classes = (IsAuthenticatedOrReadOnly,)
 
@@ -22,7 +22,7 @@ class GenreDetail(generics.RetrieveUpdateDestroyAPIView):
          movies = Movie.objects.filter(genres=genres)
          return movies
 
-class GenreList(generics.RetrieveUpdateDestroyAPIView):
+class GenreList(generics.ListCreateAPIView):
     queryset = Genre.objects.all()
     serializer_class = GenreSerializer
     permission_classes = (IsAuthenticatedOrReadOnly,)
