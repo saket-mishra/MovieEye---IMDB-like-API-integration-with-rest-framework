@@ -12,7 +12,7 @@ from django.conf import settings
 
 def genres(request):
     data = requests.get('https://fyndapi.herokuapp.com/movieapi/genres/').json()
-    set = Movie.objects.order_by('-date')[:8]
+    set = Movie.objects.order_by('-date')[:5]
     context = RequestContext(request, {
         'gen': data,'set':set,
     }) 
