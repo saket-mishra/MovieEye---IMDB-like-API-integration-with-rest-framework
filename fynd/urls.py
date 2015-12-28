@@ -19,11 +19,11 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^movieapi/', include('movieapi.urls')), 
-    url(r'^',include('imgui.urls')),
-    url(r'^search/', include('haystack.urls')),
+    url(r'^movieapi/', include('movieapi.urls')), #api urls
+    url(r'^',include('imgui.urls')),              #gui urls
+    url(r'^search/', include('haystack.urls')),   #search urls
 ]
 urlpatterns += [
-    url(r'^api-auth/', include('rest_framework.urls',
+    url(r'^api-auth/', include('rest_framework.urls',           #rest urls
                                namespace='rest_framework')),
 ]
