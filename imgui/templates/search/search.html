@@ -9,7 +9,7 @@
 					<div class="blanket">
  <span class="count-holder fadeInLeft animated"><div style="margin:8px;">{{ forloop.counter }}</div></span>
  <span class="image-holder fadeInDown animated"><img src="{{ result.object.image }}"></span>
- <span class="info-holder fadeInUp animated"><div style="margin-left:8px;"><a href="{% url 'movies_detail' result.object.id %}">{{ result.object.movie_name }}<br><img src="/static/star.png">{{ result.object.imdb_score }}<br>Director: {{ result.object.director }}</a></div></span>
+ <span class="info-holder fadeInUp animated"><div style="margin-left:8px;"><a href="{% url 'movies_detail' result.object.id %}">{{ result.object.movie_name }}<br><img src="{% static 'star.png' %}">{{ result.object.imdb_score }}<br>Director: {{ result.object.director }}</a></div></span>
 </div>
                
             {% empty %}
