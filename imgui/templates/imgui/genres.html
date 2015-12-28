@@ -1,0 +1,62 @@
+{% extends "index.html" %}
+{% load staticfiles %}
+
+{% block genres %}
+<div class="chapter introduce">
+			<div class="umbrella">
+				<div class="left">
+					<div class="hoverr-introduction">
+						<div class="title wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+							All Of Your Favourite Movies <br> Now in<br> One place
+						</div>
+					
+						<div class="flexsearch">
+		<div class="flexsearch--wrapper fadeInUp animated">
+			<form class="flexsearch--form" action="/search/?q=">
+				<div class="flexsearch--input-wrapper">
+					<input class="flexsearch--input" type="search" placeholder="search" name="q" id="id_q">
+				</div>
+				<input class="flexsearch--submit" type="submit" value="&#10140;"/>
+			</form>
+		</div>
+</div>
+					</div>
+				
+
+				</div>
+				<div class="right wow fadeInUp animated" style="visibility: visible; animation-name: bounceIn;">
+				  <div class="inner" id="release-show"><img src="{% static '/static/star-wars.png' %}"><div class="dark-mask-absolute"></div><div id="text">Recent Releases</div></div>
+				  <div class="inner" id="sprite-show"><img src="{% static '/static/movie-theater.png' %}"><div class="dark-mask-absolute"></div><div id="textone">Movies By Genre</div></div>				  <div class="clear"></div
+				</div>
+			</div>
+		</div>
+<div class="filler fadeIn animated">
+
+<p>A composite list of movies<br>
+Just search for your favourite movies<br>
+Or sieve through the list</p>
+</div>		
+<div class="release-cover fadeInUp animated">
+<div class="upcoming">Recent releases</div>
+<table>
+{% for s in set %}
+  <tr>
+    <td><a href="{% url 'movies_detail' s.id %}">{{s.movie_name}}</a></td>
+  </tr>
+{% endfor %}
+</table>
+</div>
+<div class="sprite-cover fadeInUp animated"   style="display:none;">
+{% for g in gen %}
+
+<div class="cover">
+        <span class="sprite {{g.genre_name|lower}}"></span>
+        <span id="mid"><a href="{% url 'movies_list' g.id %}"><div>{{g.genre_name}}</div></a></span>
+		
+</div>
+{% endfor %}
+<div id="c2"></div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% load staticfiles %}
+<html>
+	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static '/static/1.css' %}">
+	</head>
+	<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"><img src="{% static '/static/logo.png' %}"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="http://127.0.0.1:8000/popular-movies/">Popular Movies</a></li>
+        <li><a href="http://127.0.0.1:8000/highest-rated-movies/">Highest Rated</a></li>
+		<li><a href="http://127.0.0.1:8000/highest-rated-movies/">Git Source</a></li>
+		<li class="active"><a href="http://127.0.0.1:8000/movieapi/">API</a></li>
+      </ul>   
+    </div>
+  </div>
+</nav>
+	<div class="page-wrap">
+	{% block genres %}{% endblock %}
+	{% block content %}{% endblock %}
+	{% block genrelist %}{% endblock %}
+	{% block movielist %}{% endblock %}
+	{% block display %}{% endblock %}
+	{% block display1 %}{% endblock %}
+	</div>
+	</body>
+	<script>
+	$(document).ready(function() {
+        $('#sprite-show').click(function() {
+            $(".sprite-cover").show()
+             $('.sprite-cover').get(0).scrollIntoView()
+	  	 });
+		
+    });
+	
+	</script>
+
+		<script>
+	$(document).ready(function() {
+        $('#release-show').click(function() {
+            $(".release-cover").show()
+             $('.release-cover').get(0).scrollIntoView()
+	  	 });
+		
+    });
+	
+	</script>
+</html>

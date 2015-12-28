@@ -1,0 +1,5 @@
+{{ object.movie_name }}
+{{ object.id }}
+{{ object.image }}
+{{ object.director }}
+{{ object.imdb_score }}

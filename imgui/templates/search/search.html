@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+
+{% block content %}
+        {% if query %}
+            <div class="heading">Results</div>
+           <div class="movie-list-wrapper">
+            {% for result in page.object_list %}
+								
+					<div class="blanket">
+ <span class="count-holder fadeInLeft animated"><div style="margin:8px;">{{ forloop.counter }}</div></span>
+ <span class="image-holder fadeInDown animated"><img src="{{ result.object.image }}"></span>
+ <span class="info-holder fadeInUp animated"><div style="margin-left:8px;"><a href="{% url 'movies_detail' result.object.id %}">{{ result.object.movie_name }}<br><img src="/static/star.png">{{ result.object.imdb_score }}<br>Director: {{ result.object.director }}</a></div></span>
+</div>
+               
+            {% empty %}
+                <div class="result">Nope! found nothing. Check the name again or maybe wait for the movie to be added. </div>
+            {% endfor %}
+			</div>
+
+            {% if page.has_previous or page.has_next %}
+                <div>
+                    {% if page.has_previous %}<a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">{% endif %}&laquo; Previous{% if page.has_previous %}</a>{% endif %}
+                    |
+                    {% if page.has_next %}<a href="?q={{ query }}&amp;page={{ page.next_page_number }}">{% endif %}Next &raquo;{% if page.has_next %}</a>{% endif %}
+                </div>
+            {% endif %}
+        {% else %}
+        {% endif %}
+{% endblock %}

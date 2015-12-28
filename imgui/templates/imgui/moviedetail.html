@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+{% load staticfiles %}
+
+{% block movielist %}
+<div class="movie-detail-wrapper">
+<div class="im-det fadeInUp animated"><img src="{{genlist.image}}"></div>
+<div class="name fadeInDown animated">
+{{genlist.movie_name}}
+</div>
+<div class="direct">
+
+{% for g in gen %}
+<a href="{% url 'movies_list' g.id %}">{{g.genre_name}}&nbsp&nbsp&nbsp</a>
+{% endfor %}
+</div>
+<div class="direct">
+<span><img src="{% static '/static/star.png' %}"></span><span>{{genlist.imdb_score}}</span>
+</div>
+<div class="direct">
+<span>Director :&nbsp </span><span>{{genlist.director}}</span>
+</div>
+{% endblock %}
+</div>

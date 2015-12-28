@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+{% block display %}
+<div class="movie-list-wrapper">
+<div class="heading-top"><div class="result">{{count}} Results Found Based On Popularity </div>
+{% for g in m_list %}
+ 
+<div class="blanket">
+ <span class="count-holder fadeInLeft animated"><div style="margin:8px;">{{ forloop.counter }}</div></span>
+ <span class="image-holder fadeInDown animated"><img src="{{ g.image }}"></span>
+ <span class="info-holder fadeInUp animated"><div style="margin-left:8px;"><a href="{% url 'movies_detail' g.id %}">{{g.movie_name}}<br>Popularity Meter : {{g.popularity_99}}<br>Director: {{g.director}}</a></div></span>
+</div>
+{% endfor %}
+</div>
+
+
+{% endblock %}
