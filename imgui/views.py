@@ -11,7 +11,7 @@ from django.conf import settings
 
 
 def genres(request):
-    data = requests.get('http://127.0.0.1:8000/movieapi/genres/').json()
+    data = requests.get('https://fyndapi.herokuapp.com/movieapi/genres/').json()
     set = Movie.objects.order_by('-date')[:8]
     context = RequestContext(request, {
         'gen': data,'set':set,
@@ -19,7 +19,7 @@ def genres(request):
     return render_to_response('imgui/genres.html', context)
 	
 def movielist(request,id):
-    data = requests.get('http://127.0.0.1:8000/movieapi/genres/' + id + '/movies/').json()
+    data = requests.get('https://fyndapi.herokuapp.com/movieapi/genres/' + id + '/movies/').json()
     count=len(data)
     context = RequestContext(request, {
         'genlist': data,'count':count,
@@ -27,7 +27,7 @@ def movielist(request,id):
     return render_to_response('imgui/genrelist.html', context) 
 	
 def moviedetail(request,id):
-    data = requests.get('http://127.0.0.1:8000/movieapi/movie/' + id + '/').json()
+    data = requests.get('https://fyndapi.herokuapp.com/movieapi/movie/' + id + '/').json()
     context = RequestContext(request, {
         'genlist': data,'gen': data['genres'],
     }) 
