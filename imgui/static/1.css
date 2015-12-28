@@ -564,7 +564,7 @@ animation-name: fadeOut;
 animation-name: fadeOutLeft;
 }
 /*****************************************************************************************************/
-.sprite { background: url('/static/sprite.png') no-repeat top left; width: 80px; height: 80px;margin-right: 10px;} 
+.sprite { background: url('sprite.png') no-repeat top left; width: 80px; height: 80px;margin-right: 10px;} 
 .sprite.action { background-position: 0 0; } 
 .sprite.animation { background-position: 0 -90px; } 
 .sprite.comedy { background-position: 0 -180px; } 
