@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 import os
 from django.conf import settings
 
-SECRET_KEY = '$8^3a3$qkv4bz#f76psu#@x50-^nh@lq2n73f@48)(2#a=2u4n'
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -82,18 +81,6 @@ WSGI_APPLICATION = 'fynd.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-import dj_database_url
-DATABASES = {
-	'default': {
-	'ENGINE': 'django.db.backends.postgresql_psycopg2',
-	'NAME': 'd4a34qkliau3h5',
-	'USER': 'yizqdgykkphmbf',
-	'PASSWORD': 'xVKoDZDMhE8s-8W7c3VC4HdUoZ',
-	'HOST': 'ec2-107-22-197-152.compute-1.amazonaws.com',
-	'PORT': '5432',
-	}
-}
-DATABASE_URL = 'postgres://yizqdgykkphmbf:xVKoDZDMhE8s-8W7c3VC4HdUoZ@ec2-107-22-197-152.compute-1.amazonaws.com:5432/d4a34qkliau3h5'
 
 
 
