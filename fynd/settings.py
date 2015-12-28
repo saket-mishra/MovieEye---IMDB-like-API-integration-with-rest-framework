@@ -135,7 +135,7 @@ REST_FRAMEWORK = {
     )
 }
 
-
+STATIC_URL = location("/static/")
 
 
 # Internationalization
@@ -166,9 +166,9 @@ AWS_HEADERS = {  # see http://developer.yahoo.com/performance/rules.html#expires
         'Cache-Control': 'max-age=94608000',
     }
 	
-AWS_STORAGE_BUCKET_NAME = 'fynd'
-AWS_ACCESS_KEY_ID = 'AKIAI2I75RY5RHS3PHDA'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'futile'
+AWS_ACCESS_KEY_ID = 'AKIAILHPNYQEYEDHO55A'
+AWS_SECRET_ACCESS_KEY = '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'
 
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 STATIC_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
