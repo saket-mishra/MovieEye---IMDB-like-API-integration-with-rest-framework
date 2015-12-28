@@ -136,8 +136,6 @@ REST_FRAMEWORK = {
 }
 
 STATIC_URL = location("/static/")
-
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
